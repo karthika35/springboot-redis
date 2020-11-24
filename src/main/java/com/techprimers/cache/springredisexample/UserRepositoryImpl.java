@@ -25,7 +25,7 @@ public class UserRepositoryImpl {
     @RequestMapping(value = "/products", method = RequestMethod.POST)
     public String createProduct(@RequestBody User user){
 
-        redisTemplate.opsForHash().put(Hkey,user.getId(),user.toString());
+        redisTemplate.opsForHash().put(Hkey,user.getId(),user);
         return "product created succesfully";
 
     }
